@@ -1,2 +1,2 @@
 # leetcode-solved-questions
-LeetCode solved questions.
+LeetCode, GFG & Hackerrank DSA solved questions.
