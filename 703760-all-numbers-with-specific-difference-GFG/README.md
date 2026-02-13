@@ -1,0 +1,16 @@
+# [All numbers with specific difference](https://www.geeksforgeeks.org/problems/all-numbers-with-specific-difference3558/1)
+## Hard
+Given a positive number n and a number d. Find the count of positive numbers smaller or equal to n such that the difference between the number and sum of its digits is greater than or equal to given specific value d.
+Examples:
+Input: n = 13, d = 2
+Output: 4
+Explanation:
+There are 4 numbers satisfying the
+Conditions. These are 10, 11, 12 and 13.
+Input: n = 14, d = 3
+Output: 5
+Explanation:
+There are 5 numbers satisfying the
+Conditions. These are 10, 11, 12, 13 and 14.
+
+Constraints:1 ≤ n ≤ 1091 ≤ d ≤ 109
