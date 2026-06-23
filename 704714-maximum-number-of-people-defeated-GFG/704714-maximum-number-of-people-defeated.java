@@ -1,0 +1,22 @@
+class Solution {
+    int maxPeopleDefeated(int p) {
+        long left = 0, right = 10000;
+
+        while (left <= right) {
+            long mid = left + (right - left) / 2;
+            long sum = mid * (mid + 1) * (2 * mid + 1) / 6;
+
+            if (sum <= p) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+
+        return (int) right;
+    }
+}
+
+// Synced seamlessly with LeetHub Pro
+// Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
+// Get it here: https://chromewebstore.google.com/detail/bcilpkkbokcopmabingnndookdogmbna
