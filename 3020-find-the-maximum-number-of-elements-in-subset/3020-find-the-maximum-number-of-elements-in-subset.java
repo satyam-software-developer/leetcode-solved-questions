@@ -2,7 +2,7 @@ import java.util.*;
 
 class Solution {
     public int maximumLength(int[] nums) {
-        HashMap<Long, Integer> freq = new HashMap<>();
+        Map<Long, Integer> freq = new HashMap<>();
         for (int x : nums) {
             freq.put((long) x, freq.getOrDefault((long) x, 0) + 1);
         }
@@ -11,12 +11,13 @@ class Solution {
 
         if (freq.containsKey(1L)) {
             int c = freq.get(1L);
-            ans = Math.max(ans, c % 2 == 0 ? c - 1 : c);
+            ans = Math.max(ans, (c % 2 == 0) ? c - 1 : c);
         }
 
         for (long x : freq.keySet()) {
-            if (x == 1)
+            if (x == 1L)
                 continue;
+
             long cur = x;
             int len = 0;
 
@@ -27,11 +28,13 @@ class Solution {
                 cur *= cur;
             }
 
-            if (freq.getOrDefault(cur, 0) >= 1) {
-                ans = Math.max(ans, len + 1);
-            } else {
-                ans = Math.max(ans, len - 1);
+            if (freq.getOrDefault(cur, 0) == 1) {
+                len++;
+            } else if (len > 0) {
+                len--;
             }
+
+            ans = Math.max(ans, len);
         }
 
         return ans;
