@@ -1,4 +1,4 @@
-# [Compare two numbers](https://www.geeksforgeeks.org/problems/compare-two-numbers/1?page=1&category=CPP&status=unsolved&sortBy=submissions)
+# [Compare two numbers](https://www.geeksforgeeks.org/problems/compare-two-numbers/1)
 ## Easy
 You are given two numbers a&nbsp;and&nbsp;b. If&nbsp;a&nbsp;is greater than b&nbsp;print 1, otherwise print 0.
 Example :
