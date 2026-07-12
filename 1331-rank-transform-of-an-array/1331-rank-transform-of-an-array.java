@@ -1,34 +1,28 @@
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 
 class Solution {
     public int[] arrayRankTransform(int[] arr) {
-        // Step 1: Create a copy of the array and sort it
-        int[] sortedArr = arr.clone();
-        Arrays.sort(sortedArr);
-        
-        // Step 2: Use a HashMap to map the element to its rank
-        HashMap<Integer, Integer> rankMap = new HashMap<>();
-        int rank = 1;  // Start rank from 1
-        
-        // Assign rank to elements
-        for (int num : sortedArr) {
-            if (!rankMap.containsKey(num)) {
-                rankMap.put(num, rank);
-                rank++;
+        int n = arr.length;
+        int[] sorted = arr.clone();
+        Arrays.sort(sorted);
+
+        Map<Integer, Integer> rank = new HashMap<>();
+        int r = 1;
+
+        for (int num : sorted) {
+            if (!rank.containsKey(num)) {
+                rank.put(num, r++);
             }
         }
-        
-        // Step 3: Replace each element in the original array with its rank
-        int[] result = new int[arr.length];
-        for (int i = 0; i < arr.length; i++) {
-            result[i] = rankMap.get(arr[i]);
+
+        int[] ans = new int[n];
+        for (int i = 0; i < n; i++) {
+            ans[i] = rank.get(arr[i]);
         }
-        
-        return result;
+
+        return ans;
     }
 }
-
 
 // Synced seamlessly with LeetHub Pro
 // Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
